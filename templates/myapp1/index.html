@@ -1,0 +1,9 @@
+{%  extends 'myapp1/base.html' %}
+{%  block title %}
+Home {% endblock title %}
+{% block content %}
+<p>{% for item in item_list %}</p>
+<ol>{{ item.name|upper }}
+{{ item.description }}</ol>
+{% endfor %}
+{% endblock content %}
