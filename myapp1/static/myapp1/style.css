@@ -1,0 +1,47 @@
+body{
+
+
+     /* replace with your preferred background color */
+    color: #022d06; /* replace with your preferred text color */
+    font-size: 20px; /* replace with your preferred font size */
+    font-family: Arial, sans-serif; /* replace with your preferred font family */
+}
+
+html {
+     height: 100%;
+    width: 100%;
+      background: linear-gradient(to bottom left, rgb(225, 210, 43), #00ff27);
+    }
+
+/* Set styles for <h1> tags */
+h1 {
+    font-size: 24px; /* replace with your preferred font size */
+    color: #030303; /* replace with your preferred font color */
+    font-family: Arial, sans-serif; /* replace with your preferred font family */
+    font-style: normal; /* replace with your preferred font style (normal, italic, or oblique) */
+    font-weight: bold; /* replace with your preferred font weight (normal or bold) */
+    text-align: center; /* replace with your preferred text alignment */
+}
+
+a {
+    font-size: 24px; /* replace with your preferred font size */
+    color: #595959; /* replace with your preferred font color */
+    font-family: Arial, sans-serif; /* replace with your preferred font family */
+    font-style: normal; /* replace with your preferred font style (normal, italic, or oblique) */
+    font-weight: bold; /* replace with your preferred font weight (normal or bold) */
+    text-align: center; /* replace with your preferred text alignment */
+}
+
+/* Define a custom class */
+.my-class {
+    background-color: #752c2c; /* replace with your preferred background color */
+    color: #61b99a; /* replace with your preferred text color */
+    font-size: 16px; /* replace with your preferred font size */
+    font-family: Arial, sans-serif; /* replace with your preferred font family */
+    text-align: center; /* replace with your preferred text alignment */
+}
+
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}

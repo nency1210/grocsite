@@ -1,13 +1,43 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp1/style.css' %}?v={{ STATIC_VERSION }}"/>
+    <title> Online Grocery Store - {% block title %} Welcome! {% endblock %}</title>
 </head>
 <body>
-<h1> Our ItemList</h1>
-{% block content %}
+    <div>
+        <h1>{% block myhdg %} Welcome to Green WEB(page) {% endblock %}</h1>
 
-{% endblock %}
+        {% block content %}
+
+
+         {% endblock %}
+    </div>
+        <hr/>
+    <div>
+        <ul>
+            <li class="hbar1"><a href = "{% url 'myapp1:about'%}"> About page </a><br/></li>
+            <br>
+            <li class="hbar1"><a href = "{% url 'myapp1:index'%}"> Main page </a><br/></li>
+            <br>
+            <li class="hbar1"><a href = "{% url 'myapp1:items'%}"> Items page </a><br/></li>
+            <br>
+            <li class="hbar1"><a href = "{% url 'myapp1:myorder'%}"> MyOrder page </a><br/></li>
+            <br>
+            {% if user.is_authenticated %}
+              <a href="{% url 'myapp1:user_logout' %}">Logout</a>
+            {% else %}
+              <a href="{% url 'myapp1:user_login' %}">Login</a>
+            {% endif %}
+            <br>
+        </ul>
+    </div>
 </body>
 </html>
+
+
+
+
+
+

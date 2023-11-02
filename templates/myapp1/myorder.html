@@ -1,0 +1,29 @@
+{% extends 'myapp1/base.html' %}
+
+{% block content %}
+  <h1>My Orders</h1>
+  {% if orders %}
+    <table>
+      <thead>
+        <tr><hr>
+          <th>|   Order Number   |</th>
+          <th>|   Item Name   |</th>
+          <th>|   Quantity   |</th>
+          <th>|   Price   |</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+          <tr>
+            <td>|   {{ order.pk }}   |</td>
+            <td>|   {{ order.items.name }}   |</td>
+            <td>|   {{ order.quantity }}   |</td>
+            <td>|   {{ order.total_price }}   |</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>{{ message }}</p>
+  {% endif %}
+{% endblock %}

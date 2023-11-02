@@ -1,0 +1,29 @@
+{% extends 'myapp1/base.html' %}
+
+     {% block title %}
+            detail
+     {% endblock %}
+
+
+    {% block content %}
+        {% if type %}
+            <h2>{{ type.name }}</h2>
+            {% if items %}
+                  <h3>Items</h3>
+                  <ul>
+                    {% for item in items %}
+        <li><a href="{% url 'myapp1:itemdetail' item.id %}">{{ item.name }} - {{ item.price }}
+          ({% if item.available %}
+                    availabe
+            {% else %}
+                    not available
+            {% endif %})</a></li>                    {% endfor %}
+                  </ul>
+            {% else %}
+                <p>No items found.</p>
+            {% endif %}
+        {% else %}
+            <p>No type found.</p>
+        {% endif %}
+
+    {% endblock %}

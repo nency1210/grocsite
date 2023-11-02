@@ -1,0 +1,26 @@
+{% extends 'myapp1/base.html' %}
+
+{% block content %}
+
+
+     {% if item_list %}
+    <h2>Available Items</h2>
+    <ol>
+      {% for item in item_list %}
+        <li><a href="{% url 'myapp1:itemdetail' item.id %}">{{ item.name }} - {{ item.price }}
+          ({% if item.available %}
+                    availabe
+            {% else %}
+                    not available
+            {% endif %})</a></li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <strong> None of the items is available! </strong>
+  {% endif %}
+{#    {% for item in item_list %}#}
+{#        <li>{{ item.name }} - {{ item.price }}</li>#}
+{#    {% endfor %}#}
+
+    <a href="{% url 'myapp1:place_order' %}">Place a new order</a>
+{% endblock %}

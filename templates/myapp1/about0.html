@@ -1,0 +1,14 @@
+{% extends 'myapp1/base.html' %}
+
+     {% block title %}
+            about
+     {% endblock %}
+
+
+    {% block content %}
+
+        <p> {{ message }}</p>
+{#        <p><a href="{% url 'myapp1:index' %}">Index(home) Page {dynamic URL}</a></p>#}
+{##}
+{#        <p><a href="http://127.0.0.1:8000/">Index(home) Page {hardcoded URL}</a></p>#}
+    {% endblock %}

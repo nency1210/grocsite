@@ -1,0 +1,19 @@
+{% extends 'myapp1/base.html' %}
+
+{% block content %}
+
+<h1>This is the Place Order page</h1>
+
+<ul>
+  {% for item in item_list %}
+    <li><a href="{% url 'myapp1:itemdetail' item.id %}">{{ item.name }}</a></li>
+  {% endfor %}
+</ul>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit Order Item Form">
+</form>
+
+{% endblock %}
